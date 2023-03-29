@@ -3,17 +3,17 @@
         {
           "id": 0,
           "newID": 1,
-          "time": "today",
+          "time": "today"
         },
         {
           "id": 1,
           "newID": 1,
-          "time": "today",
+          "time": "today"
         },
         {
           "id": 2,
           "newID": 2,
-          "time": "today",
+          "time": "today"
         }
   ]
 }
