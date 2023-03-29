@@ -1,19 +1,36 @@
-{
-    "tokens": [
-        {
-          "id": 0,
-          "newsID": "0", 
-          "date": "today"
-        },
-        {
-          "id": 1,
-          "newsID": "1", 
-          "date": "today"
-        },
-        {
-          "id": 2,
-          "newsID": "2", 
-          "date": "today"
-        }
-    ]
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
+contract MyNFT is ERC721 {
+    uint256 private _currentTokenId;
+    
+    struct NFT {
+        uint256 id;
+        address owner;
+        uint256 date;
+        string description;
+        string photo;
+    }
+    
+    mapping(uint256 => NFT) private _nfts;
+    
+    constructor() ERC721("MyNFT", "NFT") {}
+    
+    function mint(address to, uint256 date, string memory description, string memory photo) public returns (uint256) {
+        _currentTokenId++;
+        uint256 newTokenId = _currentTokenId;
+        _mint(to, newTokenId);
+        
+        NFT memory nft = NFT(newTokenId, to, date, description, photo);
+        _nfts[newTokenId] = nft;
+        
+        return newTokenId;
+    }
+    
+    function getNFT(uint256 tokenId) public view returns (NFT memory) {
+        require(_exists(tokenId), "MyNFT: NFT does not exist");
+        return _nfts[tokenId];
+    }
 }
