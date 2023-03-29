@@ -2,18 +2,21 @@
     "tokens": [
         {
           "id": 0,
-          "newID": 1,
-          "time": "today"
+          "description": "This is the first sample NFT.",
+          "external_url": "https://training.mammothinteractive.com/", 
+          "name": "Hello NFT 0"
         },
         {
           "id": 1,
-          "newID": 1,
-          "time": "today"
+          "description": "This is the second sample NFT.",
+          "external_url": "https://training.mammothinteractive.com/", 
+          "name": "Hello NFT 1"
         },
         {
           "id": 2,
-          "newID": 2,
-          "time": "today"
+          "description": "This is the third sample NFT.",
+          "external_url": "https://training.mammothinteractive.com/",
+          "name": "Hello NFT 2"
         }
-  ]
+    ]
 }
